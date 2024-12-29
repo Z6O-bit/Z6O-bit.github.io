@@ -689,4 +689,82 @@ textarea:focus {
     100% {
         transform: translate(100%, 100vh);
     }
+}
+
+/* 移动端适配 */
+@media screen and (max-width: 768px) {
+    .container {
+        width: 100%;
+        padding: 0 10px;
+    }
+
+    /* 头部样式适配 */
+    .header-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .header-left {
+        margin-bottom: 10px;
+    }
+
+    .avatar-container {
+        width: 60px;
+        height: 60px;
+    }
+
+    /* 标签页按钮适配 */
+    .tab {
+        flex-wrap: wrap;
+    }
+
+    .tab button {
+        flex: 1 1 calc(50% - 10px);
+        margin: 5px;
+        padding: 8px;
+        font-size: 14px;
+    }
+
+    /* 输入框和按钮组适配 */
+    .button-group {
+        flex-direction: column;
+    }
+
+    .translate-group, .convert-group {
+        width: 100%;
+        margin: 5px 0;
+    }
+
+    .translate-group select,
+    .translate-group button,
+    .convert-group button {
+        width: 100%;
+        margin: 5px 0;
+    }
+
+    /* 游戏界面适配 */
+    #gameCanvas {
+        width: 100%;
+        max-width: 320px;
+        height: auto;
+    }
+
+    /* 备忘录适配 */
+    .memo-container {
+        padding: 10px;
+    }
+
+    .memo-buttons {
+        flex-direction: column;
+    }
+
+    .memo-buttons button {
+        width: 100%;
+        margin: 5px 0;
+    }
+
+    #memoContent {
+        width: 100%;
+        min-height: 100px;
+    }
 } 
