@@ -201,25 +201,8 @@ button:hover {
     border-radius: 4px;
 }
 
-#qrcode {
-    width: 100%;
-    max-width: 300px;
-    height: auto;
-    aspect-ratio: 1 / 1;
-    display: none;
-    margin: 0 auto;
-}
-
-#barcode {
-    width: 100%;
-    max-width: 400px;
-    height: 200px;
-    display: none;
-    margin: 0 auto;
-}
-
 .code-display {
-    display: flex;
+    display: none; /* 初始状态隐藏 */
     justify-content: center;
     align-items: center;
     margin: 20px 0;
@@ -232,7 +215,22 @@ button:hover {
 }
 
 .code-display.active {
-    display: flex;
+    display: flex; /* 当添加 active 类时显示 */
+}
+
+#qrcode {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    aspect-ratio: 1 / 1;
+    margin: 0 auto;
+}
+
+#barcode {
+    width: 100%;
+    max-width: 400px;
+    height: 200px;
+    margin: 0 auto;
 }
 
 .download-btn {
@@ -296,7 +294,7 @@ button:hover {
 .button-group {
     display: flex;
     flex-direction: column;
-    gap: 15px;
+    gap: 10px;
     margin: 15px 0;
 }
 
@@ -308,8 +306,25 @@ button:hover {
 
 .convert-group {
     display: flex;
-    align-items: center;
+    justify-content: space-between;
     gap: 10px;
+}
+
+.convert-group button {
+    flex: 1;
+    padding: 12px;
+    font-size: 16px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    transition: background-color 0.3s, transform 0.3s;
+    cursor: pointer;
+}
+
+.convert-group button:hover {
+    background-color: #45a049;
+    transform: translateY(-1px);
 }
 
 .translate-btn {
@@ -803,4 +818,11 @@ textarea:focus {
 
 .swipe-hint {
     display: none;
+}
+
+.history-divider {
+    height: 2px;
+    background-color: #e0e0e0;
+    margin: 20px 0;
 } 
+

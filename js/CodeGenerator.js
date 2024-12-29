@@ -1,7 +1,10 @@
 const CodeGenerator = {
     generateQR() {
         const text = document.getElementById('codeText').value;
-        if (!text) return;
+        if (!text) {
+            alert('请输入需要生成二维码的文本');
+            return;
+        }
         
         const qr = qrcode(0, 'L');
         qr.addData(text);
@@ -12,8 +15,12 @@ const CodeGenerator = {
         qrImg.src = dataUrl;
         qrImg.style.display = 'block';
         document.getElementById('barcode').style.display = 'none';
-        document.querySelector('.code-display').classList.add('active');
         
+        // 确保显示容器
+        const codeDisplay = document.querySelector('.code-display');
+        codeDisplay.classList.add('active');
+        
+        // 添加到历史记录
         HistoryManager.addToHistory('qr', text, dataUrl);
     },
 
