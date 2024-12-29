@@ -885,7 +885,7 @@ textarea:focus {
     width: 100%;
     max-width: 300px;
 }
-
+  
 /* 自定义滑块样式 */
 .sensitivity-control input[type="range"] {
     -webkit-appearance: none;
