@@ -178,5 +178,30 @@ const TextConverter = {
             console.error('翻译出错:', error);
             resultDiv.textContent = `翻译失败: ${error.message}`;
         }
+    },
+
+    checkSecretInput() {
+        const text = document.getElementById('text').value.trim().toLowerCase();
+        const flappyBirdTab = document.querySelector('.tab button[onclick*="flappyBird"]');
+        const aimTrainerTab = document.querySelector('.tab button[onclick*="aimTrainer"]');
+        
+        // 检查输入是否为特定文本
+        if (text === '游戏') {
+            // 显示游戏标签页
+            if (flappyBirdTab) flappyBirdTab.style.display = 'block';
+            if (aimTrainerTab) aimTrainerTab.style.display = 'block';
+        }
+    },
+
+    init() {
+        // 添加输入监听
+        document.getElementById('text').addEventListener('input', () => {
+            this.checkSecretInput();
+        });
     }
-}; 
+};
+
+// 初始化
+document.addEventListener('DOMContentLoaded', () => {
+    TextConverter.init();
+}); 

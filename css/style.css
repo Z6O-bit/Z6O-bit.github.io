@@ -824,5 +824,89 @@ textarea:focus {
     height: 2px;
     background-color: #e0e0e0;
     margin: 20px 0;
-} 
+}
+
+.aim-container {
+    position: relative;
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+    perspective: 1000px; /* 添加3D透视效果 */
+}
+
+#aimCanvas {
+    border: 2px solid #4CAF50;
+    border-radius: 8px;
+    background-color: #1a1a1a; /* 深色背景 */
+    cursor: none; /* 隐藏默认鼠标指针 */
+    transform: rotateX(5deg); /* 添加轻微的3D倾斜 */
+    transition: transform 0.3s ease;
+}
+
+.aim-stats {
+    display: flex;
+    gap: 20px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #fff;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 10px 20px;
+    border-radius: 20px;
+    margin-top: 15px;
+}
+
+/* 在移动端隐藏射击训练标签页 */
+@media screen and (max-width: 768px) {
+    #aimTrainer {
+        display: none !important;
+    }
+    
+    .tab button[onclick*="aimTrainer"] {
+        display: none;
+    }
+}
+
+.sensitivity-control {
+    margin-bottom: 15px;
+    text-align: left;
+    padding: 10px;
+    background: rgba(0, 0, 0, 0.7);
+    border-radius: 8px;
+    color: white;
+}
+
+.sensitivity-control label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.sensitivity-control input[type="range"] {
+    width: 100%;
+    max-width: 300px;
+}
+
+/* 自定义滑块样式 */
+.sensitivity-control input[type="range"] {
+    -webkit-appearance: none;
+    height: 8px;
+    background: #4CAF50;
+    border-radius: 4px;
+    outline: none;
+}
+
+.sensitivity-control input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 20px;
+    height: 20px;
+    background: #fff;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+/* 默认隐藏游戏标签页按钮 */
+.tab button[onclick*="flappyBird"],
+.tab button[onclick*="aimTrainer"] {
+    display: none;
+}
 
