@@ -756,15 +756,38 @@ textarea:focus {
 
     .memo-buttons {
         flex-direction: column;
+        gap: 10px;
     }
 
     .memo-buttons button {
         width: 100%;
         margin: 5px 0;
+        padding: 12px;
+        font-size: 16px;
     }
 
     #memoContent {
         width: 100%;
-        min-height: 100px;
+        min-height: 150px;
+    }
+
+    .memo-item {
+        padding: 15px;
+        margin-bottom: 15px;
+        border: 1px solid #e0e0e0;
+        border-radius: 8px;
+    }
+
+    .memo-item h3 {
+        font-size: 18px;
+        margin-bottom: 10px;
+    }
+
+    .memo-item p {
+        font-size: 14px;
+    }
+
+    .import-btn {
+        display: none; /* 隐藏导入按钮 */
     }
 } 

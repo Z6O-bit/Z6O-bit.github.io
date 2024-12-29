@@ -178,3 +178,13 @@ const MemoManager = {
             .replace(/'/g, "&#039;");
     }
 }; 
+
+document.addEventListener("DOMContentLoaded", function() {
+    // 检查屏幕宽度并隐藏导入按钮
+    if (window.innerWidth <= 768) {
+        const importButton = document.querySelector('.import-btn');
+        if (importButton) {
+            importButton.style.display = 'none';
+        }
+    }
+}); 
