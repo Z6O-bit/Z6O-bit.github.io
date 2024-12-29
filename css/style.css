@@ -17,6 +17,7 @@ body {
     width: 100%;
     max-height: calc(100vh - 40px);
     overflow-y: auto;
+    touch-action: pan-y; /* 允许垂直滚动 */
 }
 
 .header {
@@ -63,30 +64,32 @@ body {
 }
 
 .tab {
-    overflow: hidden;
-    border: none;
-    background-color: transparent;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     margin-bottom: 20px;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    padding: 10px;
 }
 
 .tab button {
-    background-color: transparent;
-    float: left;
-    border: none;
-    outline: none;
-    cursor: pointer;
-    padding: 15px 25px;
-    transition: all 0.3s;
-    color: #666;
+    flex: 1 1 calc(25% - 10px);
+    margin: 5px;
+    padding: 12px 20px;
     font-size: 16px;
-    font-weight: 600;
+    font-weight: bold;
+    color: #333;
+    background-color: #e9ecef;
+    border: none;
     border-radius: 8px;
-    margin-right: 10px;
+    transition: background-color 0.3s, transform 0.3s;
+    cursor: pointer;
 }
 
 .tab button:hover {
-    background-color: rgba(76, 175, 80, 0.1);
-    color: #4CAF50;
+    background-color: #ced4da;
+    transform: translateY(-2px);
 }
 
 .tab button.active {
@@ -199,10 +202,12 @@ button:hover {
 }
 
 #qrcode {
-    width: 300px;
-    height: 300px;
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    aspect-ratio: 1 / 1;
     display: none;
-    max-width: 100%;
+    margin: 0 auto;
 }
 
 #barcode {
@@ -214,7 +219,7 @@ button:hover {
 }
 
 .code-display {
-    display: none;
+    display: flex;
     justify-content: center;
     align-items: center;
     margin: 20px 0;
@@ -790,4 +795,12 @@ textarea:focus {
     .import-btn {
         display: none; /* 隐藏导入按钮 */
     }
+
+    .tab {
+        display: none; /* 隐藏标签页按钮 */
+    }
+}
+
+.swipe-hint {
+    display: none;
 } 
